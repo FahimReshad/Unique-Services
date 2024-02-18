@@ -14,3 +14,8 @@ function setInnerText (element, value){
     const text = document.getElementById(element);
     text.innerText= parseInt(value);
 }
+
+function disableButton (element){
+    const disable = document.getElementById(element);
+    disable.disabled = true;
+}
