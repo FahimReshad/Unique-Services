@@ -19,3 +19,8 @@ function disableButton (element){
     const disable = document.getElementById(element);
     disable.disabled = true;
 }
+
+// function inputValueById (element){
+//     const inputValue = document.getElementById(element);
+//     console.log(inputValue)
+// }
