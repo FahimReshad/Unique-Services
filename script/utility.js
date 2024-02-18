@@ -14,4 +14,3 @@ function setInnerText (element, value){
     const text = document.getElementById(element);
     text.innerText= parseInt(value);
 }
-
