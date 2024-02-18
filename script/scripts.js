@@ -11,10 +11,11 @@ for(const seat of seats){
             const seatBooking = parseInt(seatBooked) + 1;
             setInnerText('seats-left', leftedSeats) ;
             setInnerText('seat-booked', seatBooking) ;
-            seatLefts--;
-            seatBooked++;
-                          // create & append
-        const seatConfirm = document.getElementById('seat-confirm');
+            if(seatBooking >= 5 ){
+                disableButton ('seat-button');
+                
+            }
+            const seatConfirm = document.getElementById('seat-confirm');
         const p = document.createElement('p');
         const p1 = document.createElement('p');
         const p2 = document.createElement('p');
@@ -24,12 +25,20 @@ for(const seat of seats){
         seatConfirm.appendChild(p);
         seatConfirm.appendChild(p1);
         seatConfirm.appendChild(p2);
+            seatLefts--;
+            seatBooked++;
+            
+            
+                          // create & append
+        
                              // total price 
         const priceTotal = document.getElementById('total-price');
         const totalPrice = seatBooked * price;
-        console.log(totalPrice.length)
         priceTotal.innerText= totalPrice;
         disableButton (bookingSeat);
+
+
+        
                               // coupon code 
         const getInputById = document.getElementById('apply-btn');
         getInputById.addEventListener('click', function(){
@@ -37,19 +46,43 @@ for(const seat of seats){
         const inputs = inputValue.value;
         const grandTotalPrices = document.getElementById('grand-total');
         let grandTotals = grandTotalPrices.innerText;
-        if(totalPrice> 2200){
+        if(seatBooked >= 4){
             if(inputs==='NEW15'){
                 const grandTotal = totalPrice * 15 / 100 ;
                 const total = parseInt(totalPrice - grandTotal);
                 setInnerText('grand-total', total);
             }
+            else if (inputs === 'Couple 20'){
+                const grandTotal = totalPrice * 20 / 100 ;
+                const total = parseInt(totalPrice - grandTotal);
+                setInnerText('grand-total', total);
+            }else{
+                setInnerText('grand-total', totalPrice);
+                }
         }else{
-        setInnerText('grand-total', totalPrice);
-        }
+            setInnerText('grand-total', totalPrice);
+        }      
+        })       
+        
+        
+        const getInputNoById = document.getElementById('next-btn');
+        getInputNoById.addEventListener('click', function(){
+            const input = document.getElementById('phone-number');
+            const inputs = input.valueAsNumber;
+            console.log(typeof inputs);
+            if(typeof inputs ==='number' ){
+                enableButton ('next-btn');
+                // disableButton ('next-btn')
+            }
+            else {
+                // disableButton ('next-btn')
+            }
         })
         
     })
+    
 }
+
 
 // const getInputById = document.getElementById('apply-btn');
 // getInputById.addEventListener('click', function(){

@@ -16,11 +16,17 @@ function setInnerText (element, value){
 }
 
 function disableButton (element){
-    const disable = document.getElementById(element);
-    disable.disabled = true;
+    const disables = document.getElementById(element);
+    disables.disabled = true;
+}
+function enableButton (element){
+    const enables = document.getElementById(element);
+    // enables.disable = false;
+    // enables.removeAttribute('disabled', 'disabled');
 }
 
-// function inputValueById (element){
-//     const inputValue = document.getElementById(element);
-//     console.log(inputValue)
-// }
+function inputValueById (element){
+    const inputValue = document.getElementById(element);
+    
+    console.log(inputValue)
+}
