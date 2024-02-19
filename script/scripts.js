@@ -100,7 +100,7 @@ for(const seat of seats){
         const getInputNoById = document.getElementById('next-btn');
         getInputNoById.addEventListener('click', function(){
             document.getElementById('coupon-input').value= '';
-            document.getElementById('seat-confirm').innerText= 0;
+            document.getElementById('seat-confirm').innerText= "";
             document.getElementById('seats-left').innerText= 40;
             document.getElementById('phone-number').value= '';
             document.getElementById('grand-total').innerText= 0;
