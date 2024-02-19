@@ -4,7 +4,6 @@ let seatBooked = 0;
 const prices = document.getElementById('price');
 const price = parseInt(prices.innerText) ;
 for(const seat of seats){
-    
     seat.addEventListener('click', function(event){
         const bookingSeat = event.target.innerText;
         if(seatBooked ===4){
@@ -40,91 +39,36 @@ for(const seat of seats){
         const inputs = inputValue.value;
         const grandTotalPrices = document.getElementById('grand-total');
         let grandTotals = grandTotalPrices.innerText;
+                         // discount calculations 
         if(seatBooked >= 4){
             if(inputs==='NEW15'){
                 const grandTotal = totalPrice * 15 / 100 ;
                 const total = parseInt(totalPrice - grandTotal);
                 setInnerText('grand-total', total);
+                hiddenElementById('discount-field');
             }else if (inputs === 'Couple 20'){
                 const grandTotal = totalPrice * 20 / 100 ;
                 const total = parseInt(totalPrice - grandTotal);
                 setInnerText('grand-total', total);
+                hiddenElementById('discount-field');
             }else{
                 setInnerText('grand-total', totalPrice);
                 }
         }else{
-            setInnerText('grand-total', totalPrice);
-        }      
+            setInnerText('grand-total', totalPrice);            
+        }             
         })       
+                             // refresh all 
         const getInputNoById = document.getElementById('next-btn');
         getInputNoById.addEventListener('click', function(){
-            const input = document.getElementById('phone-number');
-            const inputs = input.valueAsNumber;
-            console.log(typeof inputs);
-            // hiddenElementById('body-page');
-            // removeElementById('my_modal_1');
-            // if(typeof inputs ==='number' ){
-            //     enableButton ('next-btn');
-            //     // disableButton ('next-btn')
-            // }
-            // else {
-            //     // disableButton ('next-btn')
-            // }
-            // const modal = document.getElementById('my_modal_1');
-            // const getInputNoById = document.getElementById('next-btn');
-            // getInputNoById.onclick = function(){
-            //     modal.style.display = "block" ;
-            // }
-
-
+            document.getElementById('coupon-input').value= '';
+            document.getElementById('seat-confirm').innerText= '';
+            document.getElementById('seats-left').innerText= '';
+            seatBooked= 0;
+            seatLefts= 40;
+            document.getElementById('seat-booked').innerText= '';
+            enableButton(bookingSeat);
+            enableButton(bookingSeat);   
         })
-        
-    })
-    
+    })   
 }
-
-
-// const getInputById = document.getElementById('apply-btn');
-// getInputById.addEventListener('click', function(){
-//     // console.log('okay')
-//     const inputValue = document.getElementById('coupon-input');
-    
-//     const inputs = inputValue.value;
-//     if(inputs==='NEW15'){
-//         const grandTotal = totalPrice * 15 / 100 ;
-//         const total = parseInt(totalPrice - grandTotal);
-
-//         console.log(total);
-//     }else{
-//         console.log(totalPrice)
-//     }
-// })
-
-// document.getElementById('coupon-input').addEventListener('keyup', function(){
-//     const input = document.getElementById('coupon-input');
-//     console.log(input.value)
-// });
-
-// function handleInput(){
-//     const input = document.getElementById('coupon-input');
-//     console.log(input.target)
-// }
-
-// document.addEventListener('keyup', handleInput())
-
-// const getInputById = document.getElementById('apply-btn');
-// getInputById.addEventListener('click', function(){
-//     // console.log('okay')
-//     const inputValue = document.getElementById('coupon-input');
-    
-//     const inputs = inputValue.value;
-//     if(inputs==='NEW15'){
-        
-//     }else{
-//         console.log('hae')
-//     }
-// })
-
-
-        
-

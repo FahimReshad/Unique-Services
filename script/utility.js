@@ -27,7 +27,7 @@ function disableButton (element){
 function enableButton (element){
     const disables = document.getElementById(element);
     disables.disabled = false;
-    disables.classList.add('bg-[#1DD100]');
+    disables.classList.remove('bg-[#1DD100]');
 }
 // function enableButton (element){
 //     const enables = document.getElementById(element);
