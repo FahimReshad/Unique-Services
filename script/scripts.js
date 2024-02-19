@@ -7,28 +7,15 @@ for(const seat of seats){
     
     seat.addEventListener('click', function(event){
         const bookingSeat = event.target.innerText;
-        
+        if(seatBooked ===4){
+        hiddenElementById('seat-button')     
+        }
         const leftedSeats = seatLefts - 1  ;
         const seatBooking = seatBooked + 1;
         console.log(typeof seatBooking)
         setInnerText('seats-left', leftedSeats) ;
         setInnerText('seat-booked', seatBooking) ;
-        // let no=  setInnerText('seat-booked', seatBooked) ;
-        
-        // let n = undefined;
-        // no = n ?? 4
-        // console.log(no);
-
-
-        if(seatBooked ==4){
-            // removeEventListener('click')
-        enableButton('seat-button');
-        // removeBackgroundColor (seat) ;
-
-        
-    }
-
-        
+                               // create & append
         const seatConfirm = document.getElementById('seat-confirm');
         const p = document.createElement('p');
         const p1 = document.createElement('p');
@@ -39,21 +26,13 @@ for(const seat of seats){
         seatConfirm.appendChild(p);
         seatConfirm.appendChild(p1);
         seatConfirm.appendChild(p2);
-            seatLefts--;
-            seatBooked++;
-            
-           
-                          // create & append
-        
+        seatLefts--;
+        seatBooked++;          
                              // total price 
         const priceTotal = document.getElementById('total-price');
         const totalPrice = seatBooked * price;
         priceTotal.innerText= totalPrice;
-        disableButton (bookingSeat);
-
-        
-
-        
+        disableButton (bookingSeat);      
                               // coupon code 
         const getInputById = document.getElementById('apply-btn');
         getInputById.addEventListener('click', function(){
@@ -66,8 +45,7 @@ for(const seat of seats){
                 const grandTotal = totalPrice * 15 / 100 ;
                 const total = parseInt(totalPrice - grandTotal);
                 setInnerText('grand-total', total);
-            }
-            else if (inputs === 'Couple 20'){
+            }else if (inputs === 'Couple 20'){
                 const grandTotal = totalPrice * 20 / 100 ;
                 const total = parseInt(totalPrice - grandTotal);
                 setInnerText('grand-total', total);
@@ -78,14 +56,12 @@ for(const seat of seats){
             setInnerText('grand-total', totalPrice);
         }      
         })       
-        
-        
         const getInputNoById = document.getElementById('next-btn');
         getInputNoById.addEventListener('click', function(){
             const input = document.getElementById('phone-number');
             const inputs = input.valueAsNumber;
             console.log(typeof inputs);
-            hiddenElementById('body-page');
+            // hiddenElementById('body-page');
             // removeElementById('my_modal_1');
             // if(typeof inputs ==='number' ){
             //     enableButton ('next-btn');
