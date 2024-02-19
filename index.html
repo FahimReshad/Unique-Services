@@ -38,7 +38,7 @@
             </div>
           </div>
     </header>
-    <main class="">
+    <main>
                             <!-- banner section start -->
     <section id="hide-section" class="p-1 max-w-7xl my-10 px-2 lg:px-0  mx-auto">
         <div class="lg:h-[600px] w-full bg-[url('/images/banner.png')] bg-no-repeat bg-cover object-cover rounded-lg flex flex-col justify-center items-center space-y-3 lg:space-y-7 relative">
@@ -124,8 +124,7 @@
             <h1 class="text-4xl text-[#030712] raleway-font font-bold">Unique Services</h1>
             <p>Yes, you can run unit tests and view the results directly within the app. <br> The integrated testing features allow for a streamlined .</p>
         </div>
-        <div class="lg:mt-36 max-w-7xl my-10 px-2 lg:px-0 mx-auto grid lg:grid-cols-12 shadow-xl ">
-            
+        <div class="lg:mt-36 max-w-7xl my-10 px-2 lg:px-0 mx-auto grid lg:grid-cols-12 shadow-xl ">          
             <div class="col-span-12 lg:col-span-8 p-1 lg:p-10 bg-white space-y-8">
                 <div class="flex justify-between">
                     <div class="flex gap-2">
@@ -300,13 +299,11 @@
                 </div>
             </div>
            </div>
-            </div>
-        
+            </div>       
         <div  class="col-span-12 lg:col-span-5 px-6">
             <h5 class="text-2xl font-semibold raleway-font text-[#030712] border-b-2 border-dashed pb-4 pt-1">Select Your Seat</h5>
             <div class="mt-6 bg-slate-50 py-6 rounded-lg">
-                <div class="flex justify-around text-xl font-semibold raleway-font border-b-2 border-dashed pb-3">
-               
+                <div class="flex justify-around text-xl font-semibold raleway-font border-b-2 border-dashed pb-3">             
                     <div class="flex gap-2 ">
                         <h6>Seat</h6>
                         <span id="seat-booked" class="bg-[#1DD100] px-2 rounded-xl raleway-font">0</span>
@@ -336,13 +333,13 @@
                 </div>
                 <div class="my-2 space-y-4">
                     <h6 class="text-lg font-semibold raleway-font">Phone Number*</h6>
-                    <input class="bg-white shadow-lg py-4 px-10 rounded-lg border-2 w-full " type="" name="" id="phone-number" placeholder="Enter Your Phone Number">
+                    <input class="bg-white shadow-lg py-4 px-10 rounded-lg border-2 w-full " type="number" name="" id="phone-number" placeholder="Enter Your Phone Number">
                 </div>
                 <div class="my-2 space-y-4">
                     <h6 class="text-lg font-semibold raleway-font">Email ID</h6>
                     <input class="bg-white shadow-lg py-4 px-10 rounded-lg border-2 w-full" type="email" name="" id="" placeholder="Enter Your Email ID">
                 </div>
-                <button onclick="my_modal_1.showModal()" id="next-btn" class="btn w-full text-white text-lg font-semibold raleway-font font-bold bg-[#1DD100] px-6 rounded-lg border-none hover:bg-[#1DD100] mt-6">Next</button>
+                <button onclick="my_modal_1.showModal()" id="next-btn" class="btn w-full text-white text-lg font-semibold raleway-font font-bold bg-[#1DD100] px-6 rounded-lg border-none hover:bg-[#1DD100] mt-6" disabled>Next</button>
                 <dialog id="my_modal_1" class="modal">
                     <div class="modal-box flex flex-col justify-center items-center py-16">
                     <img src="images/success.png" alt="">
@@ -360,20 +357,10 @@
                 <div class="flex justify-evenly mt-6 text-[#03071299]">
                     <a class="underline">Terms And Conditions</a>
                     <a class="underline" href="">Cancellation Policy</a>
-                   
-                    
                 </div>
-            
-             
-        </div>
-        
+            </div>       
         </div>
     </section>     
-    
-
-
-
-
     </main>
     <footer class="bg-[#030712] pt-8 lg:pt-24 pb-6 lg:pb-14">
         <div class="p-1 max-w-7xl my-10 px-2 lg:px-0 mx-auto flex justify-between pb-8">
@@ -390,8 +377,7 @@
                         <p class="lg:text-xl">Google Play</p>
                     </div>
                 </div>
-            </div>
-            
+            </div>           
         </div>
         <div class="p-1 max-w-7xl my-10 px-2 lg:px-0 mx-auto flex justify-between border-t-2 border-dashed border-slate-500 lg:py-6">
             <p class="text-slate-500">@all rights reserved, P-Ticket services limited.2024</p>
@@ -401,8 +387,7 @@
                 <a href="">Privacy policy</a>
             </div>
         </div>
-    </footer>
-    
+    </footer>   
     <script src="script/scripts.js"></script>
     <script src="script/utility.js"></script>
 </body>

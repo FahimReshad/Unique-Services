@@ -57,18 +57,27 @@ for(const seat of seats){
         }else{
             setInnerText('grand-total', totalPrice);            
         }             
-        })       
+        })             
+        const phoneNumber = document.getElementById('phone-number');
+        const number = phoneNumber.value;
+        if(typeof parseInt (number) === 'number'){
+            document.getElementById('next-btn').disabled = false;
+        }
                              // refresh all 
         const getInputNoById = document.getElementById('next-btn');
         getInputNoById.addEventListener('click', function(){
             document.getElementById('coupon-input').value= '';
             document.getElementById('seat-confirm').innerText= '';
             document.getElementById('seats-left').innerText= '';
+            document.getElementById('phone-number').value= '';
             seatBooked= 0;
             seatLefts= 40;
             document.getElementById('seat-booked').innerText= '';
             enableButton(bookingSeat);
-            enableButton(bookingSeat);   
+            enableButton(bookingSeat); 
+            enableButtonn('next-btn') ;
         })
+        
     })   
+    
 }
