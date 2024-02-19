@@ -81,14 +81,14 @@ for(const seat of seats){
         }else{
             setInnerText('grand-total', totalPrice);      
             const discountedPrice = document.getElementById('discount-price');
-                         const p3 = document.createComment('p');
-                         const p4 = document.createComment('p');
-                        //  p.innerText = parseInt (grandTotal);
-                         p3.innerText = 'Discount Price';
-                         p4.innerText = 0;
-                         discountedPrice.appendChild(p3); 
-                         discountedPrice.appendChild(p4); 
-                         setInnerText('discount-price', 0);      
+            const p3 = document.createComment('p');
+            const p4 = document.createComment('p');
+                 //  p.innerText = parseInt (grandTotal);
+            p3.innerText = 'Discount Price';
+            p4.innerText = 0;
+            discountedPrice.appendChild(p3); 
+            discountedPrice.appendChild(p4); 
+            setInnerText('discount-price', 0);      
         }             
         })                  
         const phoneNumber = document.getElementById('phone-number');
@@ -100,12 +100,15 @@ for(const seat of seats){
         const getInputNoById = document.getElementById('next-btn');
         getInputNoById.addEventListener('click', function(){
             document.getElementById('coupon-input').value= '';
-            document.getElementById('seat-confirm').innerText= '';
-            document.getElementById('seats-left').innerText= '';
+            document.getElementById('seat-confirm').innerText= "";
+            document.getElementById('seats-left').innerText= 40;
             document.getElementById('phone-number').value= '';
+            document.getElementById('grand-total').innerText= 0;
+            document.getElementById('total-price').innerText= 0;
+            document.getElementById('discount-price').innerText= 0;
             seatBooked= 0;
             seatLefts= 40;
-            document.getElementById('seat-booked').innerText= '';
+            document.getElementById('seat-booked').innerText= 0;
             enableButton(bookingSeat);
             enableButton(bookingSeat); 
             enableButtonn('next-btn') ;
