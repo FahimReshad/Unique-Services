@@ -11,7 +11,6 @@ for(const seat of seats){
         }
         const leftedSeats = seatLefts - 1  ;
         const seatBooking = seatBooked + 1;
-        console.log(typeof seatBooking)
         setInnerText('seats-left', leftedSeats) ;
         setInnerText('seat-booked', seatBooking) ;
                                // create & append
@@ -31,7 +30,7 @@ for(const seat of seats){
         const priceTotal = document.getElementById('total-price');
         const totalPrice = seatBooked * price;
         priceTotal.innerText= totalPrice;
-        disableButton (bookingSeat);      
+        disableButton (bookingSeat);             
                               // coupon code 
         const getInputById = document.getElementById('apply-btn');
         getInputById.addEventListener('click', function(){
@@ -44,20 +43,54 @@ for(const seat of seats){
             if(inputs==='NEW15'){
                 const grandTotal = totalPrice * 15 / 100 ;
                 const total = parseInt(totalPrice - grandTotal);
+                console.log();
+                const discountedPrice = document.getElementById('discount-price');
+                         const p3 = document.createComment('p');
+                         const p4 = document.createComment('p');
+                         p3.innerText = 'Discount Price';
+                         p4.innerText = parseInt (grandTotal);
+                         discountedPrice.appendChild(p3); 
+                         discountedPrice.appendChild(p4); 
+                         setInnerText('discount-price', parseInt (grandTotal));
                 setInnerText('grand-total', total);
                 hiddenElementById('discount-field');
             }else if (inputs === 'Couple 20'){
                 const grandTotal = totalPrice * 20 / 100 ;
                 const total = parseInt(totalPrice - grandTotal);
+                const discountedPrice = document.getElementById('discount-price');
+                         const p3 = document.createComment('p');
+                         const p4 = document.createComment('p');
+                         p3.innerText = 'Discount Price';
+                         p4.innerText = parseInt (grandTotal);
+                         discountedPrice.appendChild(p3); 
+                         discountedPrice.appendChild(p4); 
+                         setInnerText('discount-price', parseInt (grandTotal));
                 setInnerText('grand-total', total);
                 hiddenElementById('discount-field');
             }else{
                 setInnerText('grand-total', totalPrice);
+                const discountedPrice = document.getElementById('discount-price');
+                         const p3 = document.createComment('p');
+                         const p4 = document.createComment('p');
+                         p3.innerText = 'Discount Price';
+                         p4.innerText = 0;
+                         discountedPrice.appendChild(p3); 
+                         discountedPrice.appendChild(p4); 
+                         setInnerText('discount-price', 0);
                 }
         }else{
-            setInnerText('grand-total', totalPrice);            
+            setInnerText('grand-total', totalPrice);      
+            const discountedPrice = document.getElementById('discount-price');
+                         const p3 = document.createComment('p');
+                         const p4 = document.createComment('p');
+                        //  p.innerText = parseInt (grandTotal);
+                         p3.innerText = 'Discount Price';
+                         p4.innerText = 0;
+                         discountedPrice.appendChild(p3); 
+                         discountedPrice.appendChild(p4); 
+                         setInnerText('discount-price', 0);      
         }             
-        })             
+        })                  
         const phoneNumber = document.getElementById('phone-number');
         const number = phoneNumber.value;
         if(typeof parseInt (number) === 'number'){
