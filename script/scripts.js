@@ -4,18 +4,32 @@ let seatBooked = 0;
 const prices = document.getElementById('price');
 const price = parseInt(prices.innerText) ;
 for(const seat of seats){
+    
     seat.addEventListener('click', function(event){
         const bookingSeat = event.target.innerText;
-        setBackgroundColor (bookingSeat);
+        
         const leftedSeats = seatLefts - 1  ;
-            const seatBooking = parseInt(seatBooked) + 1;
-            setInnerText('seats-left', leftedSeats) ;
-            setInnerText('seat-booked', seatBooking) ;
-            if(seatBooking >= 5 ){
-                disableButton ('seat-button');
-                
-            }
-            const seatConfirm = document.getElementById('seat-confirm');
+        const seatBooking = seatBooked + 1;
+        console.log(typeof seatBooking)
+        setInnerText('seats-left', leftedSeats) ;
+        setInnerText('seat-booked', seatBooking) ;
+        // let no=  setInnerText('seat-booked', seatBooked) ;
+        
+        // let n = undefined;
+        // no = n ?? 4
+        // console.log(no);
+
+
+        if(seatBooked ==4){
+            // removeEventListener('click')
+        enableButton('seat-button');
+        // removeBackgroundColor (seat) ;
+
+        
+    }
+
+        
+        const seatConfirm = document.getElementById('seat-confirm');
         const p = document.createElement('p');
         const p1 = document.createElement('p');
         const p2 = document.createElement('p');
@@ -28,7 +42,7 @@ for(const seat of seats){
             seatLefts--;
             seatBooked++;
             
-            
+           
                           // create & append
         
                              // total price 
@@ -37,6 +51,7 @@ for(const seat of seats){
         priceTotal.innerText= totalPrice;
         disableButton (bookingSeat);
 
+        
 
         
                               // coupon code 
@@ -70,13 +85,22 @@ for(const seat of seats){
             const input = document.getElementById('phone-number');
             const inputs = input.valueAsNumber;
             console.log(typeof inputs);
-            if(typeof inputs ==='number' ){
-                enableButton ('next-btn');
-                // disableButton ('next-btn')
-            }
-            else {
-                // disableButton ('next-btn')
-            }
+            hiddenElementById('body-page');
+            // removeElementById('my_modal_1');
+            // if(typeof inputs ==='number' ){
+            //     enableButton ('next-btn');
+            //     // disableButton ('next-btn')
+            // }
+            // else {
+            //     // disableButton ('next-btn')
+            // }
+            // const modal = document.getElementById('my_modal_1');
+            // const getInputNoById = document.getElementById('next-btn');
+            // getInputNoById.onclick = function(){
+            //     modal.style.display = "block" ;
+            // }
+
+
         })
         
     })
